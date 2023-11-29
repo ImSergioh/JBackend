@@ -1,5 +1,4 @@
 me\imsergioh\jbackend\ClientConnectionsHandler.class
+me\imsergioh\TestMainServer.class
 me\imsergioh\jbackend\BackendServer.class
-me\imsergioh\MainServer.class
-me\imsergioh\test\Listener.class
 me\imsergioh\jbackend\ClientConnection.class

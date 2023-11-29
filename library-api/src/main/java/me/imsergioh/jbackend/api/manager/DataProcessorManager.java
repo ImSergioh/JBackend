@@ -21,7 +21,7 @@ public class DataProcessorManager {
         processors.remove(processor);
     }
 
-    public static void register(ObjectProcessor processor) {
-        processors.add(processor);
+    public static void register(ObjectProcessor... all) {
+        processors.addAll(Arrays.asList(all));
     }
 }

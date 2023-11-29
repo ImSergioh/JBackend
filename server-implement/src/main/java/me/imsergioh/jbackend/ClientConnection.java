@@ -12,7 +12,6 @@ public class ClientConnection extends Thread {
 
     public ClientConnection(Socket connection) {
         this.connection = connection;
-        System.out.println("New client has been connected! " + connection.getInetAddress().getHostAddress());
     }
 
     public void send(Object object) {

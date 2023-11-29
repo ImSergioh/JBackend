@@ -57,7 +57,6 @@ public class BackendConnection extends Thread {
             log("Connected!");
             sendFailed();
         } catch (IOException e) {
-            e.printStackTrace();
             log("Connection to " + host + ":" + port + " failed!");
         }
     }
