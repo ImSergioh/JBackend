@@ -1,7 +1,6 @@
 package me.imsergioh.jbackend;
 
-import me.imsergioh.jbackend.api.manager.DataProcessorManager;
-import me.imsergioh.jbackend.api.test.StringProcessor;
+import me.imsergioh.jbackend.api.manager.BackendActionManager;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,7 +13,11 @@ public class BackendServer extends Thread {
 
     public BackendServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
-        DataProcessorManager.register(new StringProcessor());
+
+        // CLIENT HANDLER CLOSE METHOD
+        BackendActionManager.registerDisconnectAction(handler -> {
+            ClientConnectionsHandler.close(handler.getConnection());
+        });
     }
 
     @Override

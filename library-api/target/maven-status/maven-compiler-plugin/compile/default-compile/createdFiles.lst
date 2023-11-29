@@ -1,8 +1,8 @@
 me\imsergioh\jbackend\api\process\ProcessorType.class
 me\imsergioh\jbackend\api\ObjectStreamReader.class
-me\imsergioh\jbackend\api\test\StringProcessor.class
 me\imsergioh\jbackend\api\process\IObjectProcessor.class
 me\imsergioh\jbackend\api\process\ObjectProcessor.class
 me\imsergioh\jbackend\api\ConnectionHandler.class
 me\imsergioh\jbackend\api\manager\DataProcessorManager.class
 me\imsergioh\jbackend\api\ObjectStreamWriter.class
+me\imsergioh\jbackend\api\manager\BackendActionManager.class

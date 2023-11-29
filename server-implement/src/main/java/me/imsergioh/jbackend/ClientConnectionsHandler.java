@@ -1,5 +1,6 @@
 package me.imsergioh.jbackend;
 
+import java.io.IOException;
 import java.net.Socket;
 import java.util.HashMap;
 
@@ -22,7 +23,16 @@ public class ClientConnectionsHandler {
     }
 
     public static void close(Socket socket) {
-        get(socket).disconnect();
+        try {
+            socket.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        connections.remove(socket);
+    }
+
+    public static int getConnectionsCount() {
+        return connections.size();
     }
 
 }

@@ -35,12 +35,4 @@ public class ClientConnection extends Thread {
     public ConnectionHandler getConnectionHandler() {
         return connectionHandler;
     }
-
-    public void disconnect() {
-        try {
-            connection.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

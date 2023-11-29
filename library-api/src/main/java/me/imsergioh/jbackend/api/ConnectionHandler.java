@@ -1,5 +1,7 @@
 package me.imsergioh.jbackend.api;
 
+import me.imsergioh.jbackend.api.manager.BackendActionManager;
+
 import java.io.IOException;
 import java.net.Socket;
 
@@ -14,6 +16,15 @@ public class ConnectionHandler {
         this.writer = new ObjectStreamWriter(this, connection.getOutputStream());
         this.reader = new ObjectStreamReader(this, connection.getInputStream());
         reader.start();
+        BackendActionManager.registerEstablishedConnection(this);
+    }
+
+    public void send(Object object) {
+        try {
+            writer.sendObject(object);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public ObjectStreamReader getReader() {
@@ -32,6 +43,7 @@ public class ConnectionHandler {
         try {
             reader.disable();
             connection.close();
+            BackendActionManager.registerDisconnectConnection(this);
         } catch (IOException ignore) {}
     }
 

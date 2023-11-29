@@ -1,7 +1,6 @@
 package me.imsergioh.jbackend.api;
 
 import me.imsergioh.jbackend.api.manager.DataProcessorManager;
-import me.imsergioh.jbackend.api.test.StringProcessor;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +22,7 @@ public class ObjectStreamReader extends Thread implements Runnable {
         while (active) {
             try {
                 Object received = readObject();
-                DataProcessorManager.processObject(received);
+                DataProcessorManager.processObject(handler, received);
             } catch (Exception e) {
                 System.out.println("Disconnected from " + handler.getConnection().getInetAddress().getHostAddress());
                 handler.close();
