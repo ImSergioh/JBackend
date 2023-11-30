@@ -22,8 +22,13 @@ public class ObjectStreamReader extends Thread implements Runnable {
         while (active) {
             try {
                 Object received = readObject();
-                DataProcessorManager.processObject(handler, received);
+                try {
+                    DataProcessorManager.processObject(handler, received);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("Disconnected from " + handler.getConnection().getInetAddress().getHostAddress());
                 handler.close();
                 disable();
