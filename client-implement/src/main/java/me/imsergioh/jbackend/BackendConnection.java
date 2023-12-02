@@ -93,6 +93,10 @@ public class BackendConnection extends Thread {
         System.out.println("[BackendConnection - Client] " + message);
     }
 
+    public ConnectionHandler getConnectionHandler() {
+        return connectionHandler;
+    }
+
     public static void setLogging(boolean active) {
         logsEnabled = active;
     }
