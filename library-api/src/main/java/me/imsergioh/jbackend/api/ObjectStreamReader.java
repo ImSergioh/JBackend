@@ -28,7 +28,6 @@ public class ObjectStreamReader extends Thread implements Runnable {
                     e.printStackTrace();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
                 System.out.println("Disconnected from " + handler.getConnection().getInetAddress().getHostAddress());
                 handler.close();
                 disable();
