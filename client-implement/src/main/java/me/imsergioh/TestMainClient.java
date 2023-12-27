@@ -1,7 +1,6 @@
 package me.imsergioh;
 
 import me.imsergioh.jbackend.BackendConnection;
-import me.imsergioh.jbackend.api.manager.BackendActionManager;
 import me.imsergioh.jbackend.api.manager.DataProcessorManager;
 import me.imsergioh.test.Listener;
 
