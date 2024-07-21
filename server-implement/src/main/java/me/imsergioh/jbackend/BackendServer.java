@@ -1,5 +1,6 @@
 package me.imsergioh.jbackend;
 
+import lombok.Getter;
 import me.imsergioh.jbackend.api.manager.BackendActionManager;
 
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.net.Socket;
 
 public class BackendServer extends Thread {
 
+    @Getter
     private final ServerSocket serverSocket;
     private boolean active = true;
 
